@@ -11,7 +11,7 @@ brew "fzf"
 brew "lsd"
 brew "zoxide"
 brew "tmux"
-brew "starship"
+
 
 # Editor & Dev Tools
 brew "neovim"
@@ -39,12 +39,12 @@ brew "sd"
 brew "tree"
 brew "hugo"
 brew "pandoc"
-brew "neofetch"
-brew "sk"
+
 
 # Cask Apps
 cask "ghostty"
 cask "aerospace"
+cask "karabiner-elements"
 cask "raycast"
 cask "bitwarden"
 cask "localsend"

@@ -33,14 +33,14 @@ require('lazy').setup({
   require 'config.plugins.goto-preview',
   require 'config.plugins.harpoon',
   require 'config.plugins.lazygit',
-  -- require 'config.plugins.opencode-context',
   require 'config.plugins.lint',
   require 'config.plugins.oil',
+  require 'config.plugins.indent_line',
+  require 'config.plugins.render-markdown',
 
   -- Disabled plugins (uncomment to enable)
   -- require 'config.plugins.debug',
-  -- require 'config.plugins.indent_line',
-  -- require 'config.plugins.neo-tree',
+  -- require 'config.plugins.opencode-context',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

@@ -25,24 +25,11 @@ PROMPT='%F{cyan}%~%f %F{yellow}$(git_branch)%f > '
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
-export PATH="$HOME/lua-language-server/bin:$PATH"
-export PATH="$HOME/.local/opt/go/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/scripts:$PATH"
-export PATH="$HOME:$PATH"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-
-DISABLE_AUTO_TITLE="true"
-
-export NVM_DIR="$HOME/.nvm"
-if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-    source "$NVM_DIR/nvm.sh"
-fi
-if [[ -s "$NVM_DIR/bash_completion" ]]; then
-    source "$NVM_DIR/bash_completion"
-fi
 
 if command -v rbenv &>/dev/null; then
     eval "$(rbenv init -)"
@@ -50,10 +37,6 @@ fi
 
 if [[ -s "$HOME/.cargo/env" ]]; then
     source "$HOME/.cargo/env"
-fi
-
-if [[ -s "$HOME/.config/envman/load.sh" ]]; then
-    source "$HOME/.config/envman/load.sh"
 fi
 
 alias vim="nvim"
