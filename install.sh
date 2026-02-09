@@ -149,27 +149,8 @@ fi
 # 9. Local environment variables (~/.env.local)
 # ============================================================
 if [ ! -f "${HOME}/.env.local" ]; then
-    echo ""
-    read -p "Set up deploy config (~/.env.local)? [y/N] " -n 1 -r
-    echo ""
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        echo ""
-        read -p "Deploy SSH host alias (e.g. myserver): " deploy_host
-        read -p "Deploy remote path (e.g. /var/www/mysite/): " deploy_path
-        read -p "Local site directory (e.g. \$HOME/mysite): " site_dir
-        read -p "Content source directory (e.g. \$HOME/vault/publish/): " content_source
-
-        cat > "${HOME}/.env.local" << ENVEOF
-# Deploy configuration (used by deploy.sh and clean-deploy.sh)
-export DEPLOY_HOST="${deploy_host}"
-export DEPLOY_PATH="${deploy_path}"
-export SITE_DIR="${site_dir}"
-export CONTENT_SOURCE="${content_source}"
-ENVEOF
-        info "Created ~/.env.local"
-    else
-        info "Skipped. You can create ~/.env.local later if you need the deploy scripts."
-    fi
+    info "Creating ~/.env.local template — edit it later with your deploy config."
+    cp "${DOTFILES_DIR}/env.local.example" "${HOME}/.env.local"
 else
     info "~/.env.local already exists, skipping."
 fi
@@ -184,7 +165,8 @@ info "========================================="
 echo ""
 warn "Remaining manual steps:"
 echo "  1. Set up SSH keys (copy from backup or generate new ones)"
-echo "  2. Log into services (GitHub, etc.)"
-echo "  3. Set Ghostty as default terminal (if desired)"
-echo "  4. Restart your shell: exec zsh"
+echo "  2. Edit ~/.env.local with your deploy config (after SSH is set up)"
+echo "  3. Log into services (GitHub, etc.)"
+echo "  4. Set Ghostty as default terminal (if desired)"
+echo "  5. Restart your shell: exec zsh"
 echo ""
