@@ -24,7 +24,7 @@ return {
         resolution = { 3840, 2160 },                     -- width x height
         fps = 60,                                        -- frames per second
         transparent = true,                              -- transparent background
-        export_dir = vim.fn.expand("~/workspace/github.com/BeneSchlz/manim/output"), -- output directory
+        export_dir = vim.fn.expand("~/workspace/github.com/BenedictSchulz/manim/output"), -- output directory
         max_workers = 3,                                 -- number of concurrent renders
         ignore_files = { "common.py", "export.py" },     -- files to skip
         failed_list_file = "failed_files.txt",           -- log failures
