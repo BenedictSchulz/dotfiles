@@ -1,0 +1,49 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+size = 13
+
+[cursor]
+style = { shape = "Block" }
+
+[mouse]
+hide_when_typing = true
+
+[window]
+decorations = "None"
+opacity = 1.0
+option_as_alt = "Both"
+
+[colors.primary]
+background = "#2D353B"
+foreground = "#D3C6AA"
+
+[colors.cursor]
+cursor = "#D3C6AA"
+text = "#2D353B"
+
+[colors.selection]
+background = "#D3C6AA"
+text = "#2D353B"
+
+[colors.normal]
+black   = "#7A8478"
+red     = "#E67E80"
+green   = "#A7C080"
+yellow  = "#DBBC7F"
+blue    = "#7FBBB3"
+magenta = "#D699B6"
+cyan    = "#83C092"
+white   = "#D3C6AA"
+
+[colors.bright]
+black   = "#859289"
+red     = "#E67E80"
+green   = "#A7C080"
+yellow  = "#DBBC7F"
+blue    = "#7FBBB3"
+magenta = "#D699B6"
+cyan    = "#83C092"
+white   = "#D3C6AA"

@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Credentials & local env - NEVER commit these
+.git-credentials
+.ssh/
+.env.local
+
+# Neovim plugin artifacts (installed by lazy.nvim)
+nvim/lazy-lock.json
+
+# Node modules
+node_modules/

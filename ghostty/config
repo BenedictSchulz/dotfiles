@@ -1,0 +1,10 @@
+theme = everforest-dark-medium
+font-family = "JetBrains Mono"
+font-size = 13
+background-opacity = 1
+cursor-style = "block"
+mouse-hide-while-typing = true
+
+window-decoration = false
+macos-option-as-alt = true
+
