@@ -14,13 +14,9 @@ fi
 
 bindkey -v
 
-setopt PROMPT_SUBST
-
-git_branch() {
-    git symbolic-ref --short HEAD 2>/dev/null
-}
-
-PROMPT='%F{cyan}%~%f %F{yellow}$(git_branch)%f > '
+if command -v starship &>/dev/null; then
+    eval "$(starship init zsh)"
+fi
 
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
@@ -45,6 +41,7 @@ alias v="nvim"
 alias rz="source ~/.zshrc"
 alias cd="z"
 alias ls="lsd -l"
+alias lg="lazygit"
 
 alias oc='tmux split-window -h && tmux select-pane -T "opencode" && tmux send-keys "opencode" Enter && tmux select-pane -t .-'
 

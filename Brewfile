@@ -11,7 +11,7 @@ brew "fzf"
 brew "lsd"
 brew "zoxide"
 brew "tmux"
-
+brew "starship"
 
 # Editor & Dev Tools
 brew "neovim"

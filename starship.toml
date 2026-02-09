@@ -1,0 +1,45 @@
+# Minimal starship prompt — Everforest inspired
+
+format = """$directory$git_branch$git_status$character"""
+right_format = """$cmd_duration"""
+
+[character]
+success_symbol = "[>](green)"
+error_symbol = "[>](red)"
+vimcmd_symbol = "[<](yellow)"
+
+[directory]
+style = "cyan"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+style = "yellow"
+format = "[$branch]($style) "
+
+[git_status]
+style = "red"
+format = '([$all_status$ahead_behind]($style) )'
+
+[cmd_duration]
+min_time = 2_000
+style = "dimmed white"
+format = "[$duration]($style)"
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[rust]
+disabled = true
+
+[golang]
+disabled = true
+
+[ruby]
+disabled = true
+
+[package]
+disabled = true
