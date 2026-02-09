@@ -105,9 +105,6 @@ link "lazygit"    "${HOME}/.config/lazygit"
 # Scripts
 link "scripts"    "${HOME}/.config/scripts"
 
-# Starship prompt
-link "starship.toml"  "${HOME}/.config/starship.toml"
-
 # ============================================================
 # 5. Tmux Plugin Manager (TPM)
 # ============================================================

@@ -14,9 +14,16 @@ fi
 
 bindkey -v
 
-if command -v starship &>/dev/null; then
-    eval "$(starship init zsh)"
-fi
+autoload -U colors && colors
+
+git_branch() {
+    local branch
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+    echo " %F{180}${branch}%f"
+}
+
+setopt PROMPT_SUBST
+PROMPT='%F{109}%~%f$(git_branch) %(?.%F{144}.%F{174})>%f '
 
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
