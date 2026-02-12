@@ -18,7 +18,58 @@ return {
       end,
       desc = "Obsidian: new note",
     },
+    {
+      "<leader>oN",
+      function()
+        vim.ui.input({ prompt = "Note title: " }, function(title)
+          if title and title ~= "" then
+            vim.cmd("vsplit")
+            vim.cmd("Obsidian new " .. title)
+          end
+        end)
+      end,
+      desc = "Obsidian: new note (split)",
+    },
     { "<leader>oq", "<cmd>Obsidian quick_switch<cr>", desc = "Obsidian: quick switch" },
+    {
+      "<leader>oc",
+      function()
+        local vault = vim.fn.expand("~/vault_obsidian")
+        local date = os.date("%d-%m-%Y")
+        local path = vault .. "/01 Daily Notes/" .. date .. ".md"
+
+        -- Create daily note if it doesn't exist
+        if vim.fn.filereadable(path) == 0 then
+          local file = io.open(path, "w")
+          if file then
+            file:write("# " .. date .. "\n\n")
+            file:close()
+          end
+        end
+
+        -- Open in floating window
+        local buf = vim.api.nvim_create_buf(false, false)
+        local width = math.floor(vim.o.columns * 0.5)
+        local height = math.floor(vim.o.lines * 0.4)
+        vim.api.nvim_open_win(buf, true, {
+          relative = "editor",
+          width = width,
+          height = height,
+          col = math.floor((vim.o.columns - width) / 2),
+          row = math.floor((vim.o.lines - height) / 2),
+          style = "minimal",
+          border = "rounded",
+          title = " " .. date .. " ",
+          title_pos = "center",
+        })
+        vim.cmd("edit " .. vim.fn.fnameescape(path))
+        -- Jump to end of file in insert mode
+        vim.cmd("normal! Go")
+        vim.cmd("startinsert")
+      end,
+      desc = "Obsidian: capture to daily note",
+    },
+  
   },
   ---@module 'obsidian'
   ---@type obsidian.config
