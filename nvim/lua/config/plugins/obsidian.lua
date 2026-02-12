@@ -11,9 +11,33 @@ return {
       "<leader>on",
       function()
         vim.ui.input({ prompt = "Note title: " }, function(title)
-          if title and title ~= "" then
-            vim.cmd("Obsidian new " .. title)
+          if not title or title == "" then
+            return
           end
+          local vault = vim.fn.expand("~/vault_obsidian")
+          local filename = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+          local path = vault .. "/00 Inbox/" .. filename .. ".md"
+
+          -- Open in floating window
+          local buf = vim.api.nvim_create_buf(false, false)
+          local width = math.floor(vim.o.columns * 0.5)
+          local height = math.floor(vim.o.lines * 0.4)
+          vim.api.nvim_open_win(buf, true, {
+            relative = "editor",
+            width = width,
+            height = height,
+            col = math.floor((vim.o.columns - width) / 2),
+            row = math.floor((vim.o.lines - height) / 2),
+            style = "minimal",
+            border = "rounded",
+            title = " " .. title .. " ",
+            title_pos = "center",
+          })
+          vim.cmd("edit " .. vim.fn.fnameescape(path))
+          vim.cmd("normal! i# " .. title)
+          vim.cmd("normal! o")
+          vim.cmd("normal! o")
+          vim.cmd("startinsert")
         end)
       end,
       desc = "Obsidian: new note",
