@@ -28,7 +28,6 @@ require('lazy').setup({
   require 'config.plugins.treesitter',
   require 'config.plugins.autopairs',
   require 'config.plugins.manim',
-  require 'config.plugins.toggleterm',
   require 'config.plugins.nvim-tmux-navigator',
   require 'config.plugins.goto-preview',
   require 'config.plugins.harpoon',
@@ -38,6 +37,9 @@ require('lazy').setup({
   require 'config.plugins.indent_line',
   require 'config.plugins.render-markdown',
   require 'config.plugins.99',
+  require 'config.plugins.obsidian',
+  require 'config.plugins.flash',
+
 
   -- Disabled plugins (uncomment to enable)
   -- require 'config.plugins.debug',

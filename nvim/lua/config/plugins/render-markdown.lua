@@ -5,5 +5,11 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'nvim-tree/nvim-web-devicons',
   },
-  opts = {},
+  opts = {
+    code = {
+      sign = false,
+      width = "block",
+      right_pad = 1,
+    },
+  },
 }
