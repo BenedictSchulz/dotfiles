@@ -37,6 +37,7 @@ require('lazy').setup({
   require 'config.plugins.oil',
   require 'config.plugins.indent_line',
   require 'config.plugins.render-markdown',
+  require 'config.plugins.99',
 
   -- Disabled plugins (uncomment to enable)
   -- require 'config.plugins.debug',

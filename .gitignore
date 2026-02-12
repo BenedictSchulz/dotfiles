@@ -8,6 +8,7 @@
 
 # Neovim plugin artifacts (installed by lazy.nvim)
 nvim/lazy-lock.json
+nvim/lua/config/plugins/tmp/
 
 # Node modules
 node_modules/
