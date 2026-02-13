@@ -91,6 +91,10 @@ run = 'move-node-to-workspace 2'
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace 2'
 # --- Workspace to monitor assignment ---
 [workspace-to-monitor-force-assignment]
 4 = "secondary"

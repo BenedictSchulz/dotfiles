@@ -14,7 +14,7 @@ hide_when_typing = true
 [window]
 decorations = "None"
 opacity = 1.0
-option_as_alt = "Both"
+option_as_alt = "OnlyLeft"
 
 [colors.primary]
 background = "#2D353B"
